@@ -1,0 +1,14 @@
+language: android
+dist: trusty
+android:
+        components:
+                - build-tools-29.0.3
+                  #the sdk version used by our project
+                - android - 29
+
+                  #additional components
+                - extra-google-google_play_services
+                - extra-google-m2repository
+                - extra-android-m2repository
+
+                 #specifying at least one system image so we can run at least one emulator during our test
