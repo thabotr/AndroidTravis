@@ -26,13 +26,6 @@ public class MainActivityUnitTest {
         assertEquals( 4, main.unitTestFunction());
     }
 
-    @Test
-    public void unitTestFunctionTestFail()
-    {
-        //a test we're meant to fail. There's nothing special about this test. I just want more tests and some of which should fail, is all.
-        assertEquals( 7, main.unitTestFunction());
-    }
-
     @AfterClass
     public static void tearDown()
     {
