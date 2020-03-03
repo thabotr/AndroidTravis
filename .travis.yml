@@ -3,6 +3,7 @@ dist: trusty
 android:
         components:
                 - build-tools-29.0.3
+                - android-29
                   #- sys-img-armeabi-v7a-addon-google_apis-google-28
 
 before_install:
