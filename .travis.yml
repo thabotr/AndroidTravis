@@ -3,12 +3,13 @@ dist: trusty
 android:
         components:
                 - build-tools-29.0.3
+                - sys-img-armeabi-v7a-addon-google_apis-google-28
 
 before_install:
-        - yes | sdkmanager "platforms;android-29"
+        - yes | sdkmanager "platforms;android-28"
 
 before_script:
-        - echo no | android create avd --force -n test -t android-29 --abi armeabi-v7a -c 100M
+        - echo no | android create avd --force -n test -t Google Inc.:Google APIs:28 --abi armeabi-v7a -c 100M
         - emulator  -avd test -no-audio -no-window &
         - android-wait-for-emulator
         - adb shell input keyevent 82 &
