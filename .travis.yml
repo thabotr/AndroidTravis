@@ -5,4 +5,4 @@ android:
                 - build-tools-29.0.3
 
 before_install:
-        - yes | sdkmanager "platforms;android-29
+        - yes | sdkmanager "platforms;android-29"
