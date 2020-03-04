@@ -16,7 +16,7 @@ before_install:
   # add travis user to groups
         - sudo adduser $USER libvirt
         - sudo adduser $USER kvm
-
+          #
           - echo yes | android update sdk -a --no-ui --filter sys-img-x86_64-android-28 > /dev/null
             #- android list targets #used this to find target abis for android-28
           - echo no | android create avd --name myAndroid28 -t android-28 --abi default/x86_64 > /dev/null
