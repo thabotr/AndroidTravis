@@ -5,21 +5,21 @@ android:
                 - build-tools-29.0.3
 
 install:
-        - yes | sdkmanager "platforms;android-28" > /dev/null
+        - yes | sdkmanager "platforms;android-28" 
 
 notifications:
         email: false
 before_install:
         #set up KVM
-        - sudo apt-get -y --no-install-recommends install bridge-utils libpulse0 libvirt-bin qemu-kvm virtinst ubuntu-vm-builder > /dev/null
+        - sudo apt-get -y --no-install-recommends install bridge-utils libpulse0 libvirt-bin qemu-kvm virtinst ubuntu-vm-builder 
         - sudo apt-get install -y libxtst6 libnss3-dev libnspr4 libxss1 libasound2 libatk-bridge2.0-0 libgtk-3-0 libgdk-pixbuf2.0-0
   # add travis user to groups
         - sudo adduser $USER libvirt
         - sudo adduser $USER kvm
-          #
-          - echo yes | android update sdk -a --no-ui --filter sys-img-x86_64-android-28 > /dev/null
+          
+          - echo yes | android update sdk -a --no-ui --filter sys-img-x86_64-android-28 
             #- android list targets #used this to find target abis for android-28
-          - echo no | android create avd --name myAndroid28 -t android-28 --abi default/x86_64 > /dev/null
+          - echo no | android create avd --name myAndroid28 -t android-28 --abi default/x86_64
           - emulator -avd myAndroid28 -no-audio -no-window &
 before_script:
           - android-wait-for-emulator
