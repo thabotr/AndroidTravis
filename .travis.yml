@@ -7,10 +7,10 @@ before_install:
                 - yes | sdkmanager "platforms;android-28"
 script:
         - cd /usr/local/android-sdk
-        - ls system-images/android-28/default/x86
+        - ls system-images/android-28/default/x86/kernel-ranchu-64
         - ls tools/
-        - mv qemu kernel-qemu
-        - export $ANDROID_SDK_ROOT='/usr/local/android-sdk/tools'
+        - mv tools/qemu tools/kernel-qemu
+        - export $ANDROID_SDK_ROOT=/usr/local/android-sdk/tools
 
          #wait for avd
         - android-wait-for-emulator
