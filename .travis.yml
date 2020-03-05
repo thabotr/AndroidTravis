@@ -7,7 +7,11 @@ before_install:
                 - yes | sdkmanager "platforms;android-28"
 script:
         - cd /usr/local/android-sdk
-        - ls
+        - ls /build-tools
+        - ls /platform-tools
+        - ls /system-images
+        - ls /tools
+        - ls /extras
 notifications:
         email: false
 before_script:
