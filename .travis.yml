@@ -6,7 +6,7 @@ android:
 before_install:
                 - yes | sdkmanager "platforms;android-28"
 script:
-        - print env
+        - printenv
 notifications:
         email: false
 before_script:
