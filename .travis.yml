@@ -7,14 +7,18 @@ before_install:
                 - yes | sdkmanager "platforms;android-28"
 script:
         - cd /usr/local/android-sdk
-        - ls system-images/android-28/default
-        - ls tools/qemu/linux-x86_64
+        - ls system-images/android-28/default/x86
+        - ls tools/
+        - mv qemu kernel-qemu
+        - export $ANDROID_SDK_ROOT='/usr/local/android-sdk/tools'
+
+         #wait for avd
+        - android-wait-for-emulator
+        - adb shell input keyevent 82 &
 notifications:
         email: false
 before_script:
          - echo yes | android update sdk -a --no-ui --filter sys-img-x86-android-28
-         - export ANDROID_SDK_ROOT=$ANDROID_HOME
-         - echo $ANDROID_SDK_ROOT 
  
          - echo no | android create avd --name myAndroid28 -t android-28 --abi default/x86 
          - emulator -avd myAndroid28 -no-audio -no-window &
