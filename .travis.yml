@@ -11,6 +11,7 @@ script:
         - ls tools/
         - mv tools/qemu tools/kernel-qemu
         - export ANDROID_SDK_ROOT="/usr/local/android-sdk/tools"
+        - echo $ANDROID_SDK_ROOT
 
          #wait for avd
         - android-wait-for-emulator
