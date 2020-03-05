@@ -5,6 +5,9 @@ android:
                 - build-tools-29.0.3
 before_install:
                 - yes | sdkmanager "platforms;android-28"
+script:
+        - pwd
+        - echo WE'RE HERE
 notifications:
         email: false
 before_script:
