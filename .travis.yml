@@ -6,7 +6,7 @@ android:
 before_install:
                 - yes | sdkmanager "platforms;android-28"
 script:
-        - export ANDROID_SDK_ROOT = $ANDROID_HOME
+        - export ANDROID_SDK_ROOT=$ANDROID_HOME
         - printenv 
 notifications:
         email: false
