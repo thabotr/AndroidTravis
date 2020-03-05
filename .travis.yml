@@ -7,11 +7,8 @@ before_install:
                 - yes | sdkmanager "platforms;android-28"
 script:
         - cd /usr/local/android-sdk
-        - ls build-tools
-        - ls platform-tools
-        - ls system-images
-        - ls tools
-        - ls extras
+        - ls system-images/android-28
+        - ls tools/qemu
 notifications:
         email: false
 before_script:
