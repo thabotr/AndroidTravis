@@ -10,7 +10,7 @@ script:
         - ls system-images/android-28/default/x86/kernel-ranchu-64
         - ls tools/
         - mv tools/qemu tools/kernel-qemu
-        - export $ANDROID_SDK_ROOT=/usr/local/android-sdk/tools
+        - export $ANDROID_SDK_ROOT="/usr/local/android-sdk/tools"
 
          #wait for avd
         - android-wait-for-emulator
