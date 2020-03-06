@@ -5,7 +5,10 @@ android:
                 - build-tools-29.0.3
 before_install:
                 - yes | sdkmanager "platforms;android-28"
-                - avdmanager list target
+                - sudo apt-get install mesa-utils
+                - glxinfo | grep "direct rendering"
+                - glxinfo | grep "acceleration"
+                - sdkmanager list-target
 
                   #- echo yes | android update sdk -a --no-ui --filter sys-img-arm64-v8a-android-28
                 - export ANDROID_SDK_ROOT="/usr/local/android-sdk-25.2.3"
