@@ -10,7 +10,7 @@ before_install:
 
 script:
         - cd /usr/local/android-sdk
-        - tree -d
+        - tree -d -L 3
        
          #wait for avd
          #- android-wait-for-emulator
