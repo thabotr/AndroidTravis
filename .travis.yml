@@ -10,9 +10,9 @@ before_install:
                 - sudo apt-get install tree
 
 script:
-        - cd /usr/local/android-sdk-25.2.3
+        - cd /usr/local/
         - mv TODO 
-        - tree -L 6 -I "extras|licenses|platform-tools|temp|build-tools|android-25"
+        - tree -P "kernel-ranchu"
           # 
          #wait for avd
          #- android-wait-for-emulator
