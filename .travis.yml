@@ -6,11 +6,11 @@ android:
 before_install:
                 - yes | sdkmanager "platforms;android-28"
                 - echo yes | android update sdk -a --no-ui --filter sys-img-x86-android-28
+                - sudo apt-get install tree
 
 script:
         - cd /usr/local/android-sdk
-        - sudo apt-get install tree
-        - tree
+        - tree -d
        
          #wait for avd
          #- android-wait-for-emulator
