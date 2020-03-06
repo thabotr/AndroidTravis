@@ -9,8 +9,8 @@ before_install:
                 - sudo apt-get install tree
 
 script:
-        - cd /usr/local/android-sdk
-        - tree -d -L 3
+        - cd /usr/local
+        - tree -L 3
        
          #wait for avd
          #- android-wait-for-emulator
