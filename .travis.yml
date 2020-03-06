@@ -18,7 +18,7 @@ notifications:
         email: false
 before_script:
          - echo yes | android update sdk -a --no-ui --filter sys-img-x86-android-28
-         - export ANDROID_SDK_ROOT="/usr/local/android-sdk"
+         - export ANDROID_SDK_ROOT="/usr/local/android-sdk/system-images"
          - echo $ANDROID_SDK_ROOT
  
          - echo no | android create avd --name myAndroid28 -t android-28 --abi default/x86 
