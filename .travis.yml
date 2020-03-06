@@ -9,6 +9,7 @@ before_install:
 
 script:
         - cd /usr/local/android-sdk
+        - apt-get install tree
         - tree
        
          #wait for avd
