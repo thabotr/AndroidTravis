@@ -7,11 +7,11 @@ before_install:
                 - yes | sdkmanager "platforms;android-28"
                 - echo yes | android update sdk -a --no-ui --filter sys-img-x86-android-28
                 - export ANDROID_SDK_ROOT="/usr/local/android-sdk-25.2.3"
-                  #- sudo apt-get install tree
+                - sudo apt-get install tree
 
-                  #script:
+script:
         #- cd /usr/local
-          #- tree -L 3
+        - tree -L 3
           # 
          #wait for avd
          #- android-wait-for-emulator
