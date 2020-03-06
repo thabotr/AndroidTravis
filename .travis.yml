@@ -11,7 +11,7 @@ before_install:
 
 script:
         - cd /usr/local/
-        - ls  
+        - tree $ANDROID_SDK_ROOT/system-images
          # 
          #wait for avd
          #- android-wait-for-emulator
