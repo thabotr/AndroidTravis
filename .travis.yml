@@ -6,12 +6,13 @@ android:
 before_install:
                 - yes | sdkmanager "platforms;android-28"
                 - echo yes | android update sdk -a --no-ui --filter sys-img-x86-android-28
-                - export ANDROID_SDK_ROOT="/usr/local/android-sdk-25.2.3"
+                - export ANDROID_SDK_ROOT="/usr/local/android-sdk-25.2.3/tools"
+                - mv qemu kernel-qemu
                 - sudo apt-get install tree
 
 script:
         - cd /usr/local/android-sdk-25.2.3
-        - tree -L 4 -d
+        - tree -L 6 -d
           # 
          #wait for avd
          #- android-wait-for-emulator
