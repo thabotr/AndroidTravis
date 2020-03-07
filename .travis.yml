@@ -15,7 +15,7 @@ before_script:
         - echo "y" | android update sdk -a --no-ui --filter sys-img-x86-android-28
           #- android list targets
         - echo "n" | android create avd --name myAndroid28 -t android-28
-        - emulator @myAndroid28 -no-window -no-audio
+        - emulator @myAndroid28 -no-window -no-audio -kernel /usr/local/android-sdk-25.2.3/system-images/android-28/default/x86/kernel-ranchu-64
         - android-wait-for-emulator
           #- export ANDROID_SDK_ROOT="/usr/local/android-sdk/system-images"
            #- echo $ANDROID_SDK_ROOT
