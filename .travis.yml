@@ -12,7 +12,7 @@ notifications:
 before_script:
         - echo "y" | android update sdk -a --no-ui --filter sys-img-x86-android-28
           #- android list targets
-        - echo "n" | android create avd --name myAandroid28 -t android-28
+        - echo "n" | android create avd --name myAndroid28 -t android-28
         - emulator @myAndroid28 -no-window -no-audio
         - android-wait-for-emulator
           #- export ANDROID_SDK_ROOT="/usr/local/android-sdk/system-images"
