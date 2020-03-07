@@ -6,9 +6,7 @@ android:
 before_install:
                 - yes | sdkmanager "platforms;android-28"
                 - export ANDROID_SDK_ROOT="/usr/local/android-sdk-25.2.3"
-                - sudo apt-get install tree
-                - cd /usr/local/
-                - tree -d -L 4
+                - android list sdk --extended --no-ui --all
 notifications:
         email: false
 before_script:
