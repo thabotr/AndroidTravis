@@ -7,7 +7,7 @@ before_install:
                 - yes | sdkmanager "platforms;android-28"
                 - export ANDROID_SDK_ROOT="/usr/local/android-sdk-25.2.3"
                 - sudo apt-get install tree
-                - tree $ANDROID_SDK_ROOT -d
+                - tree $ANDROID_SDK_ROOT/system-images
                   #- android list sdk --extended --no-ui --all
 notifications:
         email: false
