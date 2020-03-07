@@ -9,7 +9,7 @@ env:
 before_install:
         - sdkmanager "emulator" "tools" "platform-tools"
         - sdkmanager --list
-          #older packages( for emulator)
+          #older packages( for emulator) TODO change build tools to 29.0.3
         - yes | sdkmanager "build-tools;25.0.2" "platforms;android-25"
         
           #creating and starting emulator
