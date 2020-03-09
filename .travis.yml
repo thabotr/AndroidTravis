@@ -24,7 +24,7 @@ before_install:
   - yes | sdkmanager --licenses
   - sdkmanager "emulator" "tools" "platform-tools" > /dev/null
   - sdkmanager --list | head -15
-  - echo yes | sdkmanager "build-tools;$ANDROID_BUILD_TOOLS_VERSION" "platforms;android-$TARGET_VERSION" > dev/null
+  - echo yes | sdkmanager "build-tools;$ANDROID_BUILD_TOOLS_VERSION" "platforms;android-$TARGET_VERSION" 
   - echo yes | sdkmanager "platforms;android-$EMULATOR_VERSION" "system-images;android-$EMULATOR_VERSION;$ABI" > dev/null
   - sdkmanager --list | head -15
   - yes | sdkmanager "cmake;3.10.2.4988404" > dev/null
