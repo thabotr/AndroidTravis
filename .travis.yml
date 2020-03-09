@@ -1,6 +1,5 @@
 # sudo: false --> run dist image in docker container on shared host for faster startup (runs slower)
 # sudo: required --> run dist image in VM on Google Compute Engine for slower startup (runs faster)
-sudo: required
 dist: trusty
 os:
   - linux
@@ -27,8 +26,7 @@ env:
   - SYS=15 ABI="default;armeabi-v7a"
   - SYS=14 ABI="default;armeabi-v7a"
   - SYS=10 ABI="default;armeabi-v7a"
-
-matrix:
+jobs:
   allow_failures:
     - env: SYS=22 ABI="default;x86"
     - env: SYS=22 ABI="default;x86_64"
@@ -37,26 +35,21 @@ matrix:
     - env: SYS=20 ABI="default;armeabi-v7a"
     - env: SYS=14 ABI="default;armeabi-v7a"
 
-language: generic
+language: android
 before_install:
   # Install the Android SDK Dependency.
-  - export ANDROID_HOME=~/android-sdk-linux
-  - unzip -q android-sdk-tools.zip -d ${ANDROID_HOME}
-  - rm android-sdk-tools.zip
-  - PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
-  # Silence warning.
   - mkdir -p ~/.android
   - touch ~/.android/repositories.cfg
   - HOMEBREW_NO_AUTO_UPDATE=1
   # Accept licenses before installing components, no need to echo y for each component
   - yes | sdkmanager --licenses
   # Platform tools
-  - sdkmanager "emulator" "tools" "platform-tools" > /dev/null
+  - sdkmanager "emulator" "tools" "platform-tools" 
   - sdkmanager --list | head -15
   # install older packages (for emulator)
-  - sdkmanager "build-tools;25.0.2" "platforms;android-25" > /dev/null
+  - sdkmanager "build-tools;25.0.2" "platforms;android-25" 
   # Create and start emulator.
-  - sdkmanager "system-images;android-$SYS;$ABI" > /dev/null
+  - sdkmanager "system-images;android-$SYS;$ABI"
   - sdkmanager --list | head -15
   - echo no | avdmanager create avd --force -n test -k "system-images;android-$SYS;$ABI"
   # fix timezone warning
