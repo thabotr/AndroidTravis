@@ -57,7 +57,7 @@ before_install:
   - echo no | avdmanager create avd --force -n test -k "system-images;android-$SYS;$ABI"
   # fix timezone warning
   # use the absolute emulator path in case older version installed (on default path)
-  - $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-window -gpu swiftshader &
+  - $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-window &
 before_script:
   # Wait for emulator to startup.
   - ./scripts/android-wait-for-emulator.sh
