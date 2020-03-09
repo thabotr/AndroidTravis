@@ -3,6 +3,10 @@
 dist: trusty
 os:
   - linux
+
+android:
+        components:
+                - build-tools 25.0.2
 env:
   - SYS=25 ABI="google_apis;arm64-v8a"
   - SYS=25 ABI="google_apis;armeabi-v7a"
@@ -42,7 +46,6 @@ before_install:
   - touch ~/.android/repositories.cfg
   - HOMEBREW_NO_AUTO_UPDATE=1
   # Accept licenses before installing components, no need to echo y for each component
-  - yes | sdkmanager --licenses
   # Platform tools
   - sdkmanager "emulator" "tools" "platform-tools" 
   - sdkmanager --list | head -15
